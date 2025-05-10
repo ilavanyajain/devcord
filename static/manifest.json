@@ -1,0 +1,21 @@
+{
+  "name": "Devcord",
+  "short_name": "Devcord",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#22223b",
+  "theme_color": "#4CAF50",
+  "description": "A developer-friendly chat app inspired by Discord.",
+  "icons": [
+    {
+      "src": "/static/devcord-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/static/devcord-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+} 
