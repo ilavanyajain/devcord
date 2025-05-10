@@ -81,7 +81,7 @@ body {
     {% endif %}
 </div>
 
-
+{% if user.is_authenticated %}
 <div class="container">
     <style>
     input[type=text], select {
@@ -133,9 +133,8 @@ body {
         <input type="submit" value="Continue">
     </form>
 </div>
-
+{% endif %}
 
 </body>
-
 
 </html>
