@@ -121,6 +121,8 @@ body {
         <input type="hidden" name="step" value="{{ step|default:'1' }}" />
         <label>Room Name</label>
         <input type="text" name="room_name" id="room_name" width="100px" value="{{ room_name|default:'' }}" {% if step == '2' %}readonly{% endif %}/>
+        <label>Username</label>
+        <input type="text" name="username" id="username" width="100px" value="{{ username|default:'' }}" {% if step == '2' %}readonly{% endif %}/>
         {% if show_password %}
             <label>Password</label>
             <input type="password" name="password" id="password" width="100px" />
