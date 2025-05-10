@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 from chat.models import Room, Message
 from django.http import HttpResponse, JsonResponse
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
-# from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -92,16 +89,6 @@ def send(request):
 
 def getMessages(request, room):
     room_details = Room.objects.get(name=room)
+
     messages = Message.objects.filter(room=room_details.id)
     return JsonResponse({"messages":list(messages.values())})
-
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})

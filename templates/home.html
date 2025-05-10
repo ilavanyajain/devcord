@@ -71,17 +71,12 @@ body {
 <div align="center">
     <img src="{% static 'devcord-logo.jpg' %}" alt="Devcord Logo" style="height: 60px; margin-bottom: 10px;">
     <h2>Devcord</h2>
-    {% if user.is_authenticated %}
-        <p>Logged in as <b>{{ user.username }}</b> | <a href="{% url 'logout' %}">Logout</a></p>
-    {% else %}
-        <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
-    {% endif %}
     {% if error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}
 </div>
 
-{% if user.is_authenticated %}
+
 <div class="container">
     <style>
     input[type=text], select {
@@ -135,8 +130,9 @@ body {
         <input type="submit" value="Continue">
     </form>
 </div>
-{% endif %}
+
 
 </body>
+
 
 </html>
